@@ -1,0 +1,7 @@
+{
+  "name": "Interfaz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
