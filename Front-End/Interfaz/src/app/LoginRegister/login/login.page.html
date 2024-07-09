@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true">
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 40px;">
+    <img width="48" height="48" src="https://img.icons8.com/color/48/microsoft.png" alt="microsoft"/>
+  </div>
+  
+  <div class="form-container">
+    <form class="form">
+      <div class="inputForm">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="text" class="input" placeholder="Enter your Email">
+      </div>
+    
+      <div class="inputForm">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" class="input" placeholder="Enter your Password">
+        <ion-icon name="eye-off-outline"></ion-icon>
+      </div>
+    
+      <div class="flex-row1">
+          <span class="span">Forgot password?</span>
+      </div>
+
+      <button class="button-submit" routerLink="/tabs-inicio">Sign In</button>
+
+      <p class="p">Don't have an account? <span class="span" routerLink="/register">Sign Up</span></p>
+      
+      <div class="separator">
+        <hr class="line">
+        <span>Or</span>
+        <hr class="line">
+      </div>
+
+      <div class="flex-row">
+        <button class="btn google">
+          <img width="24" height="24" src="https://img.icons8.com/fluency/48/google-logo.png" alt="google-logo"/>
+          Google         
+        </button>
+
+        <button class="btn apple">
+          <img width="24" height="24" src="https://img.icons8.com/material-sharp/24/mac-os.png" alt="mac-os"/>
+          Apple      
+        </button>
+
+        <button class="btn facebook">
+          <img width="24" height="24" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>
+          Facebook      
+        </button>
+      </div>
+    </form>
+  </div>
+</ion-content>
