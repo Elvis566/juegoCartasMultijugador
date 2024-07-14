@@ -1,14 +1,17 @@
+
 .form-container {
+    border-radius: 5%;
     padding: 20px 30px;
     display: flex;
     text-align: center;
-    margin: auto;
+    margin: 2vh;
+    background-color: #44dada36;
   }
 
   .form {
     flex-direction: column;
     gap: 10px;
-    background-color: #ffffff;
+    // background-color: #ffffff;
     padding: 30px;
     width: 450px;
     border-radius: 20px;
@@ -40,6 +43,7 @@
     align-items: center;
     padding-left: 10px;
     transition: 0.2s ease-in-out;
+    margin-top: 15px;
   }
   
   .input {
@@ -48,6 +52,7 @@
     border: none;
     width: 85%;
     height: 100%;
+    background-color: #ededef00;
   }
   
   .input:focus {
@@ -141,11 +146,12 @@
     gap: 10px;
     border: 1px solid #ededef;
     background-color: white;
+    color: black;
     cursor: pointer;
     transition: 0.2s ease-in-out;
   }
   
   .btn:hover {
-    border: 1px solid #2d79f3;
+    background-color: rgb(187, 187, 187);
     ;
   }   

@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Register</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="form-container">
+    <form class="form">
+      <div class="inputForm">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="text" class="input" placeholder="Enter your Email">
+      </div>
+    
+      <div class="inputForm">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" class="input" placeholder="Enter your Password">
+        <ion-icon name="eye-off-outline"></ion-icon>
+      </div>
+
+      <div class="inputForm">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" class="input" placeholder="Repeat Password">
+        <ion-icon name="eye-off-outline"></ion-icon>
+      </div>
+
+      <button class="button-submit" routerLink="/select-a">Save</button>
+
+      <p class="p">Already have on occount? <span class="span" routerLink="/login">Sign in</span></p>
+    </form>
+  </div>
+
 </ion-content>

@@ -43,6 +43,11 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () => import('./Pages/chat/chat.module').then( m => m.ChatPageModule)
   },
+  {
+    path: 'select-a',
+    loadChildren: () => import('./LoginRegister/select-a/select-a.module').then( m => m.SelectAPageModule)
+  },
+
 
 ];
 
