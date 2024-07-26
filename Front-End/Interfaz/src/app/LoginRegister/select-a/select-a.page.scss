@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.ingreso{
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    margin: auto;
+    padding: 10%;
+    text-align: center;
+
+}
+
+#img1{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+label{
+    font-size: 2vh;
+    display: block;   
+    margin: 20px; 
+    padding: auto;
+    justify-content: center;
+}
+
+input{
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 13.5vw;
+}
+
+button{
+    font-size: 3vh;
+    border-radius: 5%;
+    background-color: aqua;
+    align-items: center;
+    padding: 5px;
+    margin: auto;
+}
+

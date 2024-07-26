@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserI } from 'src/app/models/user.models';
 
 @Component({
   selector: 'app-select-a',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-a.page.scss'],
 })
 export class SelectAPage implements OnInit {
+
+  newUser: UserI; 
 
   constructor() { }
 

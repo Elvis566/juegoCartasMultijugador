@@ -9,23 +9,24 @@
     <form class="form">
       <div class="inputForm">
         <ion-icon name="mail-outline"></ion-icon>
-        <input type="text" class="input" placeholder="Enter your Email">
+        <input type="text" #email class="input" placeholder="Enter your Email">
       </div>
     
       <div class="inputForm">
         <ion-icon name="lock-closed-outline"></ion-icon>
-        <input type="password" class="input" placeholder="Enter your Password">
+        <input type="password" #password1 class="input" placeholder="Enter your Password">
         <ion-icon name="eye-off-outline"></ion-icon>
       </div>
 
       <div class="inputForm">
         <ion-icon name="lock-closed-outline"></ion-icon>
-        <input type="password" class="input" placeholder="Repeat Password">
+        <input   #password type="password" class="input" placeholder="Repeat Password">
         <ion-icon name="eye-off-outline"></ion-icon>
       </div>
 
-      <button class="button-submit" routerLink="/select-a">Save</button>
-
+    
+      <button class="button-submit" (click)="pasar(email, password1, password)">Next</button>
+    
       <p class="p">Already have on occount? <span class="span" routerLink="/login">Sign in</span></p>
     </form>
   </div>
