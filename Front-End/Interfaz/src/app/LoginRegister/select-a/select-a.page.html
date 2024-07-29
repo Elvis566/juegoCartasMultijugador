@@ -13,8 +13,15 @@
     </div>
     <form action="">
       <label for="">Introduce un nuevo nombre de usuario para comenzar</label>
+<<<<<<< HEAD
       <input  #apodo type="text" placeholder="Nombre" required>
       <button type="submit" routerLink="/tabs-inicio" (click)="save(apodo)">Let's Go</button>
+=======
+      <ion-input type="text" placeholder="Ingrese Usuario" labelPlacement="floating" label="Ingrese Usuario" ></ion-input>
+      <ion-button routerLink="/tabs-inicio" expand="block" fill="outline" shape="round">
+        Let's Go
+      </ion-button>
+>>>>>>> a7015ed96f6c8156a3dbdd51bc3d86be9db6cc11
     </form>
     @if (cargando) {
       <div style="text-align: center;">
