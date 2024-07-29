@@ -3,6 +3,8 @@ import { collection, collectionData, Firestore,doc, docData, getDoc, setDoc, upd
   DocumentReference } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
+const { v4: uuidv4 } = require('uuid');
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,4 +24,9 @@ createDocumentID(data: any, enlace: string, idDoc: string) {
   const document = doc(this.firestore, `${enlace}/${idDoc}`);
   return setDoc(document, data);
 }
+
+createIdDoc() {
+  return uuidv4()
+}
+
 }

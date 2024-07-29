@@ -26,11 +26,9 @@ export class RegisterPage {
   
 
   pasar(email:any, password1:any, password:any){
-    debugger
     const vp = this.validatorPassword(password1.value, password.value)
     console.log(vp);
     if(vp){
-      debugger
       localStorage.setItem('email', email.value)
       localStorage.setItem('password', password.value)
       this.router.navigate(['/select-a'])
