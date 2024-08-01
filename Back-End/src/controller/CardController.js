@@ -1,5 +1,6 @@
 import { CardModel } from '../model/CardModel.js'
 
+
 export const saveCard = async (req, res)=>{
 
     const { type_game_id} = req.body;
@@ -25,3 +26,20 @@ export const saveCard = async (req, res)=>{
     }
 
 }
+
+export const getCardPlay = async(req, res)=>{
+    try {
+        const suerte = Math.floor(Math.random() * 52);
+
+        const carta = await CardModel.findByPk(suerte)
+
+        if(!carta){
+            res.status(401).json({message: 'Not foud'});
+        }
+
+        res.status(200).json({'carta': carta})
+    } catch (error) {
+        res.status(500).json({message : error.message})
+    }
+}
+

@@ -1,6 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../DB/conexion.js";
 import { TypesUser} from '../model/TypeModel.js'
+import { AvatarModel } from '../model/AvatarModel.js'
+
 export const UserModel = sequelize.define("users", {
   id: {
     type: DataTypes.INTEGER,
@@ -19,10 +21,6 @@ export const UserModel = sequelize.define("users", {
     type: DataTypes.STRING,
     allowNull: false
   },
-  avatar: {
-    type: DataTypes.BLOB('long'),
-    allowNull: false
-  },
 },
 {
     timestamps :false
@@ -30,3 +28,6 @@ export const UserModel = sequelize.define("users", {
 
 TypesUser.hasMany(UserModel, { foreignKey: "typeusers_id" });
 UserModel.belongsTo(TypesUser, { foreignKey: "typeusers_id" });
+
+AvatarModel.hasMany(UserModel, { foreignKey: "avatar_id" });
+UserModel.belongsTo(AvatarModel, { foreignKey: "avatar_id" });

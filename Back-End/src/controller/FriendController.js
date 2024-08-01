@@ -1,4 +1,6 @@
 import { FriendModel } from "../model/FriendModel.js";
+import { UserModel } from "../model/UserModel.js";
+
 
 export const saveFriend = async(req, res)=> {
     const {user_id, friend_id} = req.body;
@@ -22,3 +24,33 @@ export const saveFriend = async(req, res)=> {
         console.log(error);
     }
 }
+
+const getFriends = async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const friends = await FriendModel.findAll({
+            where: { userId },
+            include: {
+                model: UserModel,
+                as: 'Friends',
+                attributes: ['id', 'apodo', 'avatar']
+            }
+        });
+
+        if (!friends.length) {
+            return res.status(404).json({ message: 'No friends found for this user' });
+        }
+
+        const friendsData = friends.map(friend => ({
+            id: friend.Friend.id,
+            apodo: friend.Friend.apodo,
+            avatar: friend.Friend.avatar
+        }));
+
+        res.status(200).json(friendsData);
+    } catch (error) {
+        console.error('Error fetching friends:', error);
+        res.status(500).json({ message: 'Error fetching friends' });
+    }
+};

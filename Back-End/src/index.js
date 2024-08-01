@@ -5,6 +5,8 @@ import cors from 'cors';
 import { sequelize } from './DB/conexion.js'
 import { PORT } from './config/config.js'; 
 import { routerUser } from './router/UserRouter.js';
+import { routerAvatar } from './router/AvatarRouter.js';
+
 // import { UserModel } from './model/UserModel.js';
 
 const app = express();
@@ -17,6 +19,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 // Routes
 app.use('/user', routerUser);
+app.use('/avatar', routerAvatar);
+
 
 const conexion = async ()=>{
     try {

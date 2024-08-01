@@ -24,3 +24,18 @@ export const savePenitencia = async (req, res)=>{
     }
 
 }
+
+export const getPenitenciaPlay = async(req, res)=>{
+    try {
+        const suerte = Math.floor(Math.random()*3);
+        const {id_fk} = req.body
+        const penitencia = await PenitenciaModel.Where('card_id', id_fk, '&&', 'id', suerte);
+        if(penitencia){
+            res.status(401).json({'penitencia': penitencia});
+        }
+        res.status(401).json({message: 'Not foud '})
+        
+    } catch (error) {
+        res.status(500).json({message : error.message})
+    }
+}

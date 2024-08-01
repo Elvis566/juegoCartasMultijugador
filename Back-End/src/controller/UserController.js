@@ -5,12 +5,11 @@ import fs from 'node:fs'
 export const saveUser = async (req, res)=>{
 
     const typeusers_id =1;
-    const {apodo, email, password} = req.body;
-    const avatar  = saveImage(req.file) ;
+    const {apodo, email, password, avatar} = req.body;
 
     try {
         if(!apodo || !email || !password || !avatar ){
-            return res.status(400).json({messge: "not input invalid", avatar: req.file})
+            return res.status(400).json({messge: "not input invalid"})
         }
         const verfiEmail = await UserModel.findOne({ where :{email:email }});
         if(verfiEmail) {
@@ -92,9 +91,9 @@ export const login = async (req,res)=> {
 
 }
 
-function saveImage(file){
-    const newPath = `./upload/${file.originalname}`;
-    fs.renameSync(file.path, newPath);
-    return newPath
+// function saveImage(file){
+//     const newPath = `./upload/${file.originalname}`;
+//     fs.renameSync(file.path, newPath);
+//     return newPath
 
-}
+// }
