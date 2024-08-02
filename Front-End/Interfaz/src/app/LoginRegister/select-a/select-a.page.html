@@ -5,21 +5,44 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="ingreso">
-    <div class="imagenes">
-      <div id="img1">
-        <img src="" alt="">
-      </div>
+
+  <!-- <div *ngIf="pase"> -->
+    <div *ngFor="let item of datosAvatars" class="galeria">
+      <ion-avatar>
+        <img clas="avtlogo" alt="Silhouette of a person's head" src={{datosAvatars.avatar}} />
+      </ion-avatar>
     </div>
-    <form action="">
-      <label for="">Introduce un nuevo nombre de usuario para comenzar</label>
-      <input  #apodo type="text" placeholder="Nombre" required>
-      <button type="submit" routerLink="/tabs-inicio" >Let's Go</button>
+  <!-- </div> -->
+
+  <div class="form-container">
+    <form class="form">
+      <div>
+        <button  class="avatar" (click)="goGaleria()">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+        </button>
+      </div>
+
+      <label for="">Ingrese un nombre de usuario para comenzar</label>
+    
+      <div class="inputForm">
+        <input type="text" #apodo class="input" placeholder="Enter your apodo">
+        <ion-icon name="person"></ion-icon>
+      </div>
+
+      <button type="button" class="button-submit" routerLink="/tabs-inicio" >Let's Go</button>
+
     </form>
+
     @if (cargando) {
       <div style="text-align: center;">
         <ion-spinner name="bubbles"></ion-spinner>
       </div>
     }
+
   </div>
+
+
+
 </ion-content>

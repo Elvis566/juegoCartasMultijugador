@@ -5,10 +5,10 @@ import fs from 'node:fs'
 export const saveUser = async (req, res)=>{
 
     const typeusers_id =1;
-    const {apodo, email, password, avatar} = req.body;
+    const {apodo, email, password, avatar_id} = req.body;
 
     try {
-        if(!apodo || !email || !password || !avatar ){
+        if(!apodo || !email || !password || !avatar_id ){
             return res.status(400).json({messge: "not input invalid"})
         }
         const verfiEmail = await UserModel.findOne({ where :{email:email }});
@@ -21,7 +21,8 @@ export const saveUser = async (req, res)=>{
             email,
             password : encryptedPassword ,
             avatar,
-            typeusers_id
+            typeusers_id,
+            avatar_id
         })
         return res
         .status(201)
@@ -40,8 +41,7 @@ export const updateUser = async (req, res)=>{
     try {
 
         const id =req.params.id;
-        const {apodo} = req.body;
-        const avatar = req.file;
+        const {apodo, avatar} = req.body;
 
         if(!apodo || !avatar){
             return res.status(400).json({message:'invalid data'})

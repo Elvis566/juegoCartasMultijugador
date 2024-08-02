@@ -4,44 +4,174 @@ body{
 }
 
 
-
-.ingreso{
-    // display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
-    margin: auto;
-    padding: 10%;
-    text-align: center;
-
-}
-
-#img1{
-    width: 100px;
-    height: 100px;
-    background-color: black;
-}
-
-label{
-    font-size: 2vh;
-    display: block;   
-    margin: 20px; 
-    padding: auto;
-    justify-content: center;
-}
-
-input{
-    display: block;
-    margin-bottom: 20px;
-    margin-left: 13.5vw;
-}
-
-button{
-    font-size: 3vh;
+.form-container {
     border-radius: 5%;
-    background-color: aqua;
-    align-items: center;
-    padding: 5px;
+    padding: 20px 30px;
+    display: flex;
+    text-align: center;
+    margin: 20vh 2vh;
+    background-color: #44dada36;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    width: 450px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
     margin: auto;
+    justify-content: center;
+  }
+
+  .avatar{
+    background-color: #25272700;
+    border: none;
+}
+  
+  ::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .form button {
+    align-self: center;
+  }
+  
+  .flex-column > label {
+    color: #151717;
+    font-weight: 600;
+  }
+  
+  .inputForm {
+    border: 1.5px solid #ecedec;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+    margin-top: 20px;
+  }
+  
+  .input {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 85%;
+    height: 100%;
+    background-color: #ededef00;
+
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .inputForm:focus-within {
+    border: 1.5px solid #2d79f3;
+  }
+  
+  .flex-row1 {
+    display: flex;
+    flex-direction: flex-end;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .flex-row > div > label {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+  }
+  
+  .span {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #2d79f3;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .button-submit {
+    margin: 20px 0 10px 0;
+    background-color: #0825c9;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .button-submit:hover {
+    background-color: #252727;
+  }
+  
+  .p {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #8B8E98;
+  }
+  
+  .separator .line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: rgb(187, 187, 187);
+    ;
+  }   
+
+.galeria{
+    background-color: black;
+    position: absolute;
 }
 
+.avtlogo{
+    width: 50px;
+    height: 50px;
+}

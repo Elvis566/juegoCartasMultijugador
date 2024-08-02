@@ -7,12 +7,12 @@
     <form class="form">
       <div class="inputForm">
         <ion-icon name="mail-outline"></ion-icon>
-        <input type="text" class="input" placeholder="Enter your Email">
+        <input #email type="text" class="input" placeholder="Enter your Email">
       </div>
     
       <div class="inputForm">
         <ion-icon name="lock-closed-outline"></ion-icon>
-        <input type="password" class="input" placeholder="Enter your Password">
+        <input  #password type="password" class="input" placeholder="Enter your Password">
         <ion-icon name="eye-off-outline"></ion-icon>
       </div>
     
@@ -20,7 +20,7 @@
           <span class="span">Forgot password?</span>
       </div>
 
-      <button class="button-submit" routerLink="/select-a">Sign In</button>
+      <button class="button-submit" (click)="login(email, password)">Sign In</button>
 
       <p class="p">Don't have an account? <span class="span" routerLink="/register">Sign Up</span></p>
       

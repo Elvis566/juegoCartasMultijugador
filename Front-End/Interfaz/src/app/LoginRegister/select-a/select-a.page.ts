@@ -11,38 +11,35 @@ import { FirebaseSService } from 'src/app/Servicios/firebase-s.service';
 export class SelectAPage {
 
   cargando: boolean = false;
+  pase:boolean = true;
+
+  datosAvatars: any;
 
   email:string = localStorage.getItem('email');
   password:string = localStorage.getItem('password');
 
 
-  constructor( private apiS:ApiNodeService) {
+  constructor( private apiS: ApiNodeService) {
     
    }
 
+   goGaleria(){
+    debugger
+    this.pase= true;
+   }
 
-
-  // saveUser(apodo:any, avatar:any){
-  //   this.apiS.saveUser(apodo.value, this.email, this.password, avatar.value).subscribe({
-  //     next:(datos:any)=> {
-
-  //     },
-  //     error:(e:any)=>{
-
-  //     }
-  //   })
-  // }
-
-
-
-  // async save(apodo:any) {
-  //   this.newUser.apodo = apodo.value;
-  //   this.cargando = true;
-  //   debugger
-  //   await this.firebaseS.createDocumentID(this.newUser, 'Usuarios', this.newUser.id)
-  //   this.cargando = false;
-  // }
-
+   getGaleriaAll(){
+    this.apiS.getAvatarAll().subscribe({
+      next:(datos:any)=> {
+        debugger
+        this.datosAvatars= datos.avatars;
+      },
+      error:(e:any)=> {
+        console.log(e);
+        debugger
+      }
+    })
+   }
 
 
 }
