@@ -4,7 +4,7 @@ import { CardModel } from '../model/CardModel.js'
 export const saveCard = async (req, res)=>{
 
     const { type_game_id} = req.body;
-    const card = req.file;
+    const card = req.file.originalname;
 
     try {
         if(!card || !type_game_id ){
@@ -37,7 +37,8 @@ export const getCardPlay = async(req, res)=>{
             res.status(401).json({message: 'Not foud'});
         }
 
-        res.status(200).json({'carta': carta})
+        res.status(200).json({'carta': carta});
+        
     } catch (error) {
         res.status(500).json({message : error.message})
     }

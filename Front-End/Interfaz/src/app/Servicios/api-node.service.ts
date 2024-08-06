@@ -11,7 +11,7 @@ export class ApiNodeService {
   saveUser(apodo:any, email:any, password:any, avatar:any){
     // let avt  = new FormData();
     // avt.append('avatar', avatar);
-    return this.httpclient.post('/localhost:3000/user/create',{
+    return this.httpclient.post('http://localhost:3000/user/create',{
       apodo: apodo, 
       email: email,
       password: password,
@@ -19,19 +19,21 @@ export class ApiNodeService {
     })
   }
 
-  loginUser(email:any, password:any){
-    return this.httpclient.post('/localhost:3000/user/login',{
-      emial: email,
+  loginUser(email:string, password:string){
+    return this.httpclient.post('http://localhost:3000/user/login',{
+      email: email,
       password: password
     })
   }
 
   getAvatarAll(){
-    return this.httpclient.get('/localhost:3000/avatar/obtenerAll')
+    return this.httpclient.get('http://localhost:3000/avatar/obtenerAll')
   }
 
+ 
+
   getAvatar(id:any){
-    return this.httpclient.get('/localhost:3000/avatar/obtenerAll/'+id)
+    return this.httpclient.get('http://localhost:3000/avatar/obtener/'+id)
   }
 
 }

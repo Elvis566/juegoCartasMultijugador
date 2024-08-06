@@ -7,7 +7,7 @@ export const saveFriend = async(req, res)=> {
 
     try {
         if(!user_id || !friend_id){
-            return res.status(400).json({messge: "not input invalid", avatar: req.file})
+            return res.status(400).json({messge: "not input invalid"})
         }
 
         const friends = await FriendModel.create({
@@ -25,12 +25,12 @@ export const saveFriend = async(req, res)=> {
     }
 }
 
-const getFriends = async (req, res) => {
+export const getFriends = async (req, res) => {
     const { userId } = req.params;
 
     try {
         const friends = await FriendModel.findAll({
-            where: { userId },
+            where: { user_id : userId },
             include: {
                 model: UserModel,
                 as: 'Friends',
