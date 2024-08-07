@@ -47,7 +47,10 @@ const routes: Routes = [
     path: 'select-a',
     loadChildren: () => import('./LoginRegister/select-a/select-a.module').then( m => m.SelectAPageModule)
   },
-
+  {
+    path: 'sala-espera',
+    loadChildren: () => import('./Pages/sala-espera/sala-espera.module').then( m => m.SalaEsperaPageModule)
+  },
 
 ];
 

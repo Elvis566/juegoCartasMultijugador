@@ -1,3 +1,8 @@
+.boton-atras{
+    text-align: right;
+    margin-top: 20px;
+}
+
 .titulo {
     display: flex;
     align-items: center;
@@ -13,7 +18,7 @@
     flex: 1;
     height: 3px;
     background-color: black; /* Color de las líneas */
-    margin: 0 20px; /* Espacio entre la línea y el texto */
+    margin: 0 15px; /* Espacio entre la línea y el texto */
 }
 
 .titulo h1 {
@@ -21,4 +26,8 @@
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+ion-item {
+    --padding-start: 0;
 }

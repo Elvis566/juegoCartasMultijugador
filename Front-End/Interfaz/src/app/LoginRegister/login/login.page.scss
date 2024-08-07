@@ -1,3 +1,19 @@
+/* ion-avatar{
+  
+  margin-top: 40px;
+} */
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.avatar ion-avatar{
+  width: 100px;
+  height: 100px;
+}
 
 .form-container {
     border-radius: 5%;
@@ -6,9 +22,9 @@
     text-align: center;
     margin: 2vh;
     background-color: #44dada36;
-  }
+}
 
-  .form {
+.form {
     flex-direction: column;
     gap: 10px;
     // background-color: #ffffff;
@@ -20,22 +36,22 @@
     text-align: center;
     margin: auto;
     justify-content: center;
-  }
+}
   
-  ::placeholder {
+::placeholder {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+}
   
-  .form button {
+.form button {
     align-self: center;
-  }
+}
   
-  .flex-column > label {
+.flex-column > label {
     color: #151717;
     font-weight: 600;
-  }
+}
   
-  .inputForm {
+.inputForm {
     border: 1.5px solid #ecedec;
     border-radius: 10px;
     height: 50px;
@@ -44,32 +60,32 @@
     padding-left: 10px;
     transition: 0.2s ease-in-out;
     margin-top: 15px;
-  }
+}
   
-  .input {
+.input {
     margin-left: 10px;
     border-radius: 10px;
     border: none;
     width: 85%;
     height: 100%;
     background-color: #ededef00;
-  }
+}
   
-  .input:focus {
+.input:focus {
     outline: none;
-  }
+}
   
-  .inputForm:focus-within {
+.inputForm:focus-within {
     border: 1.5px solid #2d79f3;
-  }
+}
   
-  .flex-row1 {
+.flex-row1 {
     display: flex;
     flex-direction: flex-end;
     align-items: center;
     gap: 10px;
     justify-content: space-between;
-  }
+}
 
   .flex-row {
     display: flex;
