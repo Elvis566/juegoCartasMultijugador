@@ -2,7 +2,7 @@ import { AvatarModel } from '../model/AvatarModel.js'
 
 
 export const saveAvatar = async (req, res)=>{
-    const avt = req.file;
+    const avt = req.file.originalname;
 
     try {
         if(!avt){
@@ -43,7 +43,7 @@ export const getAvatar = async(req, res)=> {
         const id = req.params.id;
 
         const avatarU = await AvatarModel.findByPk(id)
-
+        
         if(!avatarU){
             res.status(401).json({message: 'Not foud'});
         }

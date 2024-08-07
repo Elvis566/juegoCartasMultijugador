@@ -1,6 +1,7 @@
 import { UserModel } from "../model/UserModel.js";
 import bcrypt from "bcrypt";
 import fs from 'node:fs'
+import { Op } from "sequelize";
 
 export const saveUser = async (req, res)=>{
 
@@ -20,7 +21,6 @@ export const saveUser = async (req, res)=>{
             apodo,
             email,
             password : encryptedPassword ,
-            avatar,
             typeusers_id,
             avatar_id
         })
@@ -89,6 +89,28 @@ export const login = async (req,res)=> {
         console.log("Error al iniciar sesion");
     }
 
+} 
+
+export const getUsers = async(req, res)=> {
+    try {
+        const id= req.params.id;
+
+    const users = await UserModel.findAll({
+        where: {
+            id :{
+                [Op.not]:id
+            }
+     }
+    });
+
+    if(!users){
+        return res.status(401).json({message: 'Not found users'})
+    }
+
+    return res.status(200).json({users: users})
+    } catch (error) {
+        return res.status(500).json({message: error})
+    }
 }
 
 // function saveImage(file){
