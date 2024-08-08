@@ -3,7 +3,6 @@ import { AvatarModel } from '../model/AvatarModel.js'
 
 export const saveAvatar = async (req, res)=>{
     const avt = req.file.originalname;
-
     try {
         if(!avt){
             return res.status(400).json({messge: "not input invalid"})
@@ -19,7 +18,6 @@ export const saveAvatar = async (req, res)=>{
     } catch (error) {
         console.log(error);
     }
-
 }
 
 export const getAvatarAll = async(req, res)=>{

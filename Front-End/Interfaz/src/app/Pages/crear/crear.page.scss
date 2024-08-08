@@ -29,7 +29,9 @@
 }
 
 .container{
-    display: flex;
+    color: black;
+    padding: auto;
+    display: block;
     justify-content: center;
     align-items: center;
     min-height: 40vh; /* Asegura que el contenedor tenga al menos el alto de la pantalla */
@@ -41,17 +43,12 @@
     gap: 15px;
 }
   
-.cards .red {
-    background-color: #f43f5e;
+.cards .color {
+    background-color: #ebe6e0;
+    display: flex;
 }
   
-.cards .blue {
-    background-color: #3b82f6;
-}
-  
-.cards .green {
-    background-color: #22c55e;
-}
+
   
 .cards .card {
     display: flex;
@@ -59,12 +56,14 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    height: 100px;
-    width: 250px;
+    height: 150px;
+    width: 75vw;
     border-radius: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     transition: 400ms;
+    margin: 10px 12.5vw ;
+    padding: auto;
 }
   
 .cards .card p.tip {
@@ -84,3 +83,4 @@
     filter: blur(10px);
     transform: scale(0.9, 0.9);
 }
+

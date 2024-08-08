@@ -14,16 +14,13 @@
 </div>
 
 <div class="container">
-  <div class="cards">
-    <div class="card red" routerLink="/sala-espera">
-        <p class="tip">Verdad o Reto</p>
+  <div *ngFor="let item of GameType" class="cards">
+
+    <div class="card color" routerLink="/sala-espera">
+        <h3 class="tip"><b>{{item.type}}</b></h3>
+        <p>{{item.descripcion}}</p>
     </div>
-    <div class="card blue">
-        <p class="tip">Retos Picantes</p>
-    </div>
-    <div class="card green">
-        <p class="tip">Chupa</p>
-    </div>
+   
   </div>
 </div>
 

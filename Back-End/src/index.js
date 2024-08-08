@@ -9,6 +9,8 @@ import { routerAvatar } from './router/AvatarRouter.js';
 import { routerPenitencia } from './router/PenitenciaRouter.js';
 import { routerCard } from './router/CardRouter.js';
 import { routerGame } from './router/GameRouter.js';
+import { routerGameT } from './router/GameTRouter.js';
+
 
 
 
@@ -35,6 +37,8 @@ app.use('/avatar', routerAvatar);
 app.use('/penitencia', routerPenitencia);
 app.use('/card', routerCard);
 app.use('/game', routerGame);
+app.use('/gameType', routerGameT);
+
 
 
 

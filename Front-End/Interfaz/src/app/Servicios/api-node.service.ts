@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,14 +27,44 @@ export class ApiNodeService {
     })
   }
 
+  getTypeGame(){
+    return this.httpclient.get('http://localhost:3000/gameType/obtener')
+  }
+
   getAvatarAll(){
-    return this.httpclient.get('http://localhost:3000/avatar/obtenerAll')
+    return this.httpclient.get('http://localhost:3000/avatar/obtenerAll').pipe(
+      map((data: any) => {
+        return data.avatars.map((avatar: any) => {
+          const bufferData = avatar.avatar.data;
+          const base64String = this.arrayBufferToBase64(bufferData);
+          avatar.avatarUrl = `data:image/png;base64,${base64String}`;
+          return avatar;
+        });
+      })
+    )
   }
 
  
 
   getAvatar(id:any){
-    return this.httpclient.get('http://localhost:3000/avatar/obtener/'+id)
+    return this.httpclient.get('http://localhost:3000/avatar/obtener/'+id).pipe(
+      map((data: any) => {
+        const bufferData = data.avatar.avatar.data;
+        const base64String = this.arrayBufferToBase64(bufferData);
+        data.avatar.avatarUrl = `data:image/png;base64,${base64String}`;
+        return data.avatar;
+      })
+    )
+  }
+
+  private arrayBufferToBase64(buffer: any): string {
+    let binary = '';
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
   }
 
 }

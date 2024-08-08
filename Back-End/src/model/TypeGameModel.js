@@ -12,6 +12,10 @@ export const TypeGameModel = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    descripcion: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     timestamps: false,
