@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiNodeService } from 'src/app/Servicios/api-node.service';
 
 @Component({
   selector: 'app-list-friends',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListFriendsPage implements OnInit {
 
-  constructor() { }
+  friends: any[] = [];
+
+  constructor(private aps: ApiNodeService) { }
 
   ngOnInit() {
   }
+
+  /* getFriendsData() {
+    this.aps.get('https://api.example.com/friends').subscribe((data: any) => {
+      this.friends = data;
+    });
+  } */
 
 }

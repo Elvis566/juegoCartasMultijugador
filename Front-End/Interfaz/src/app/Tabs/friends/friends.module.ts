@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { FriendsPageRoutingModule } from './friends-routing.module';
 import { FriendsPage } from './friends.page';
+import { ListFriendsPageModule } from "../../Pages/list-friends/list-friends.module";
+import { BuscarAmigosPageModule } from 'src/app/Pages/buscar-amigos/buscar-amigos.module';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { FriendsPage } from './friends.page';
     FormsModule,
     IonicModule,
     FriendsPageRoutingModule,
-  ],
+    ListFriendsPageModule,
+    BuscarAmigosPageModule
+],
   declarations: [FriendsPage]
 })
 export class FriendsPageModule {}

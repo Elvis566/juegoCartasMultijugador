@@ -5,5 +5,22 @@
           <h1>Amigos</h1>
         <div class="line"></div>
     </div>
+    
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="friends">
+        <ion-label>Friends</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="buscar">
+        <ion-label>Buscar</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  
+    <ng-container *ngIf="selectedSegment === 'friends'">
+      <app-list-friends></app-list-friends>
+    </ng-container>
+    
+    <ng-container *ngIf="selectedSegment === 'buscar'">
+      <app-buscar-amigos></app-buscar-amigos>
+    </ng-container>
 
 </ion-content>

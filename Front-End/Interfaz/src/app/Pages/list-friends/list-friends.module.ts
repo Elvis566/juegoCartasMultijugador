@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ListFriendsPageRoutingModule } from './list-friends-routing.module';
 import { ListFriendsPage } from './list-friends.page';
-ListFriendsPage
+
 
 @NgModule({
   imports: [
