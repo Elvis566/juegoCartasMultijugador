@@ -8,10 +8,14 @@ export const AvatarModel = sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    avatar: {
-      type: DataTypes.BLOB('long'),
+    name: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
+    url:{
+      type: DataTypes.STRING,
+      allowNull:false
+    }
   },
   {
     timestamps: false,

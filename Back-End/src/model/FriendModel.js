@@ -7,21 +7,13 @@ export const FriendModel = sequelize.define("friends", {
     autoIncrement: true,
     primaryKey: true,
   },
-//   user_ID: {
-//     type: DataTypes.INTEGER,
-//     allowNull: false,
-//   },
-//   friend_Id: {
-//     type: DataTypes.INTEGER,
-//     allowNull: false,
-//   },
-  
+
 },
 {
     timestamps :false
 });
 
-UserModel.hasMany(FriendModel, { foreignKey: "user_id" });
-FriendModel.belongsTo(UserModel, { foreignKey: "user_id" });
-UserModel.hasMany(FriendModel, { foreignKey: "friend_id" });
-FriendModel.belongsTo(UserModel, { foreignKey: "friend_id" });
+UserModel.hasMany(FriendModel, {as: 'createFriends', foreignKey: "user_id" });
+FriendModel.belongsTo(UserModel, {as: 'createFriends', foreignKey: "user_id" });
+UserModel.hasMany(FriendModel, {as: 'userFriends', foreignKey: "friend_id" });
+FriendModel.belongsTo(UserModel, {as: 'userFriends', foreignKey: "friend_id" });

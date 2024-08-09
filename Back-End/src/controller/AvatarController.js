@@ -2,13 +2,17 @@ import { AvatarModel } from '../model/AvatarModel.js'
 
 
 export const saveAvatar = async (req, res)=>{
-    const avt = req.file.originalname;
+    const name = req.body.name;
+    const url = `http://localhost:3000/images/${req.file.filename}`
     try {
-        if(!avt){
+        if(!name){
             return res.status(400).json({messge: "not input invalid"})
         }
        
-        const AVATAR = await AvatarModel.create({avatar: avt})
+        const AVATAR = await AvatarModel.create({
+            name: name,
+            url: url
+        })
         return res
         .status(201)
         .json({

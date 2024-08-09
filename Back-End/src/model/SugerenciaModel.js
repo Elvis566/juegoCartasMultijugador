@@ -16,5 +16,5 @@ export const SugerenciaModel = sequelize.define("sugerencias", {
     timestamps :false
 });
 
-UserModel.hasMany(SugerenciaModel, { foreignKey: "user_id" });
-SugerenciaModel.belongsTo(UserModel, { foreignKey: "user_id" });
+UserModel.hasMany(SugerenciaModel, { as:'enlace', foreignKey: "user_id" });
+SugerenciaModel.belongsTo(UserModel, { as: 'enlace', foreignKey: "user_id" });
