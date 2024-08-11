@@ -5,9 +5,9 @@
     </ion-button>
   </div>
 
-  <div class="avatar">
+  <div class="avatar" *ngIf="avatars">
     <ion-avatar aria-hidden="true">
-      <img alt="" src="http://localhost:3000/images/+avatars.avatarUrl" />
+      <img alt="" src="{{avatars.url}}" />
       <h1>{{apodo}}</h1>
     </ion-avatar>
   </div>

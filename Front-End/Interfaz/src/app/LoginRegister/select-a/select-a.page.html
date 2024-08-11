@@ -6,32 +6,48 @@
   </ion-header>
 
 
-  <!-- <div *ngIf="pase"> -->
-    <div *ngFor="let item of datosAvatars" class="galeria">
-      <ion-avatar>
-        <img clas="avtlogo" alt="Silhouette of a person's head" src={{datosAvatars.avatar}} />
-      </ion-avatar>
+  <div *ngIf="pase">
+    <div class="galeria" >
+      <ul *ngFor="let item of datosAvatars" >
+        <li> 
+          <button (click)="captura(item)">
+            <ion-avatar clas="avtlogo">
+              <img  alt="{{item.name}}" src={{item.url}} />
+            </ion-avatar>  
+          </button>
+        </li>
+      </ul>
     </div>
-  <!-- </div> -->
+   
+  </div>
 
   <div class="form-container">
     <form class="form">
-      <div>
-        <button  class="avatar" (click)="goGaleria()">
+     <div *ngIf="itemId">
+        <button type="button" class="avatar" (click)="goGaleria()">
           <ion-avatar>
-            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img alt="Silhouette of a person's head" src="{{itemUrl}}" />
+          </ion-avatar>
+        </button>
+     </div>
+     <div *ngIf="camino">
+      <div *ngIf="datosAvatars" >
+        <button type="button" class="avatar" (click)="goGaleria()">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="{{datosAvatars[0].url}}" />
           </ion-avatar>
         </button>
       </div>
+     </div>
 
-      <label for="">Ingrese un nombre de usuario para comenzar</label>
+      <label for="">Ingrese un apodo de usuario para comenzar</label>
     
       <div class="inputForm">
         <input type="text" #apodo class="input" placeholder="Enter your apodo">
         <ion-icon name="person"></ion-icon>
       </div>
 
-      <button type="button" class="button-submit" routerLink="/tabs-inicio" >Let's Go</button>
+      <button type="button" class="button-submit" (click)="saveUser(apodo)">Let's Go</button>
 
     </form>
 

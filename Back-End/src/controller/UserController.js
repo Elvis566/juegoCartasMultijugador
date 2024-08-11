@@ -100,7 +100,7 @@ export const getUsers = async(req, res)=> {
             id :{
                 [Op.not]:id
             }
-     }
+        }
     });
 
     if(!users){
@@ -112,6 +112,7 @@ export const getUsers = async(req, res)=> {
         return res.status(500).json({message: error})
     }
 }
+
 
 // function saveImage(file){
 //     const newPath = `./upload/${file.originalname}`;

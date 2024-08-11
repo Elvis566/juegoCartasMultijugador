@@ -8,7 +8,7 @@ import { ApiNodeService } from '../Servicios/api-node.service';
 })
 export class HomePage implements OnInit {
   apodo: string= localStorage.getItem('apodo');
-  foto: any= localStorage.getItem('foto');
+  foto: string= localStorage.getItem('foto');
   avatars:any;
 
   constructor(private apiS: ApiNodeService) {}
@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
     console.log(this.foto);
     this.apiS.getAvatar(this.foto).subscribe({
       next:(data:any)=> {
-        this.avatars = data
+        this.avatars = data.avatar
       },
       error:(e:any)=>{
         debugger
