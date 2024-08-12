@@ -1,3 +1,14 @@
 <ion-content>
   <ion-searchbar placeholder="Buscar Amigo"></ion-searchbar>
+
+  <div *ngFor="let item of datos">
+    <div>
+      <ion-avatar>
+        <img [src]="item.enlaceA.url" />
+      </ion-avatar>
+      <p>{{item.apodo}}</p>
+      <button (click)="createFriend(item.id)">Agregar</button>
+    </div>
+  </div>
+
 </ion-content>

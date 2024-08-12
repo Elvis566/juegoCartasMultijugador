@@ -27,15 +27,17 @@ export const savePenitencia = async (req, res)=>{
 
 export const getPenitenciaPlay = async(req, res)=>{
     try {
-        const suerte = Math.floor(Math.random()*3);
-        const {id_fk} = req.body
-        const penitencia = await PenitenciaModel.Where('card_id', id_fk, '&&', 'id', suerte);
+    
+        const card_id = req.params.card_id;
+        const penitencia = await PenitenciaModel.findAll({
+            where: {card_id:card_id}
+        })
         if(penitencia){
-            res.status(401).json({'penitencia': penitencia});
+           return res.status(401).json({penitencia: penitencia});
         }
-        res.status(401).json({message: 'Not foud '})
+        return res.status(401).json({message: 'Not foud '})
         
     } catch (error) {
-        res.status(500).json({message : error.message})
+       return res.status(500).json({message : error.message})
     }
 }

@@ -40,8 +40,19 @@ export class ApiNodeService {
     return this.httpclient.get('http://localhost:3000/avatar/obtener/'+id)
   }
 
-  getUserAll(){
-    return this.httpclient.get('http://localhost:3000/user')
+  getUserAll(id:any){
+    return this.httpclient.get('http://localhost:3000/user/obtener/'+id)
+  }
+
+  getFriends(id:any){
+    return this.httpclient.get('http://localhost:3000/friends/obtener/'+id)
+  }
+
+  createFriend(user_id:any, friend_id:any){
+    return this.httpclient.post('http://localhost:3000/friends/create',{
+      user_id:user_id,
+      friend_id: friend_id
+    })
   }
 
 

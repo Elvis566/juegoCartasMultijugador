@@ -3,17 +3,18 @@ import { CardModel } from '../model/CardModel.js'
 
 export const saveCard = async (req, res)=>{
 
-    const { type_game_id} = req.body;
-    const card = req.file.originalname;
+    const { name, type_game_id} = req.body;
+    const url = `http://localhost:3000/images/cards${req.file.filename}`
 
     try {
-        if(!card || !type_game_id ){
+        if(!name || !type_game_id ){
             return res.status(400).json({messge: "not input invalid"})
         }
        
         const pt = await CardModel.create({
-            card,
-            type_game_id
+            name: name,
+            url: url,
+            type_game_id: type_game_id
         })
         return res
         .status(201)
@@ -29,18 +30,18 @@ export const saveCard = async (req, res)=>{
 
 export const getCardPlay = async(req, res)=>{
     try {
-        const suerte = Math.floor(Math.random() * 52);
+        // const suerte = Math.floor(Math.random() * 52);
 
-        const carta = await CardModel.findByPk(suerte)
+        const carta = await CardModel.findAll()
 
         if(!carta){
-            res.status(401).json({message: 'Not foud'});
+           return res.status(401).json({message: 'Not foud'});
         }
 
-        res.status(200).json({'carta': carta});
+        return res.status(200).json({'carta': carta});
         
     } catch (error) {
-        res.status(500).json({message : error.message})
+        return res.status(500).json({message : error.message})
     }
 }
 

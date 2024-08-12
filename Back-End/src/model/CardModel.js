@@ -9,10 +9,14 @@ export const CardModel = sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    card: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    url:{
+      type: DataTypes.STRING,
+      allowNull:false
+    }
   },
   {
     timestamps: false,

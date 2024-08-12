@@ -1,5 +1,12 @@
 <ion-content>
 
-  <h1>luis</h1>
+  <div *ngFor="let item of amigos">
+    <div>
+      <ion-avatar>
+        <img [src]="item.url" />
+      </ion-avatar>
+      <p>{{item.apodo}}</p>
+    </div>
+  </div>
 
 </ion-content>

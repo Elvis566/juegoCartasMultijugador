@@ -4,6 +4,6 @@ import { Router } from 'express';
 const router = Router();
 
 router.post('/create',savePenitencia );
-router.get('/obtener', getPenitenciaPlay);
+router.get('/obtener/:card_id', getPenitenciaPlay);
 
 export const routerPenitencia = router;

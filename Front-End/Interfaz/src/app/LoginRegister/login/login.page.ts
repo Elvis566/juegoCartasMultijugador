@@ -19,6 +19,8 @@ export class LoginPage  {
 
         localStorage.setItem('apodo', datos.user.apodo)
         localStorage.setItem('foto', datos.user.avatar_id)
+        localStorage.setItem('idUser', datos.user.id)
+
 
 
         this.router.navigate(['/tabs-inicio'])

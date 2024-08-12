@@ -29,5 +29,5 @@ export const UserModel = sequelize.define("users", {
 TypesUser.hasMany(UserModel, { foreignKey: "typeusers_id" });
 UserModel.belongsTo(TypesUser, { foreignKey: "typeusers_id" });
 
-AvatarModel.hasMany(UserModel, { foreignKey: "avatar_id" });
-UserModel.belongsTo(AvatarModel, { foreignKey: "avatar_id" });
+AvatarModel.hasMany(UserModel, {as:'enlaceA', foreignKey: "avatar_id" });
+UserModel.belongsTo(AvatarModel, {as:'enlaceA', foreignKey: "avatar_id" });

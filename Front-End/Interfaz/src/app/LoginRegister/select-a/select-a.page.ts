@@ -63,6 +63,8 @@ export class SelectAPage implements OnInit {
       next:(data:any)=>{
         localStorage.setItem('apodo', data.user.apodo)
         localStorage.setItem('foto', data.user.avatar_id)
+        localStorage.setItem('idUser', data.user.id)
+
         this.router.navigate(['/tabs-inicio'])
 
       },

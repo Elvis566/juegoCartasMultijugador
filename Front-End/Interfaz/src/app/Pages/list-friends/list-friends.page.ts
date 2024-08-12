@@ -7,18 +7,25 @@ import { ApiNodeService } from 'src/app/Servicios/api-node.service';
   styleUrls: ['./list-friends.page.scss'],
 })
 export class ListFriendsPage implements OnInit {
-
-  friends: any[] = [];
+  amigos:any;
+  id: any = localStorage.getItem('idUser');
 
   constructor(private aps: ApiNodeService) { }
 
   ngOnInit() {
+    this.getFriends();
   }
 
-  /* getFriendsData() {
-    this.aps.get('https://api.example.com/friends').subscribe((data: any) => {
-      this.friends = data;
-    });
-  } */
+  getFriends(){
+    this.aps.getFriends(this.id).subscribe({
+      next:(data:any)=> {
+        this.amigos = data.friendsData
+        // this.avatar_id = data.friendsData.avatar
+      },
+      error:(e:any)=>{
+        console.log(e);
+      }
+    })
+  }
 
 }
