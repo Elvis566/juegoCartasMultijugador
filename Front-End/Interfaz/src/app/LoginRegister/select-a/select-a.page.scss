@@ -167,10 +167,13 @@ body{
   }   
 
 .galeria{
-    background-color: black;
-    position: absolute;
-    width: 80vw;
-    height: 200px;
+  background-color: rgb(175, 173, 173);
+  position: absolute;
+  width: 80vw;
+  height: 200px;
+  left: 50%; /* Posiciona el contenedor en el centro horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición para centrarlo */
+  border-radius: 10px;
 }
 
 .avtlogo{

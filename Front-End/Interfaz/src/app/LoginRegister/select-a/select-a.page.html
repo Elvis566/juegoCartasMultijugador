@@ -8,17 +8,18 @@
 
   <div *ngIf="pase">
     <div class="galeria" >
-      <ul *ngFor="let item of datosAvatars" >
-        <li> 
-          <button (click)="captura(item)">
-            <ion-avatar clas="avtlogo">
-              <img  alt="{{item.name}}" src={{item.url}} />
-            </ion-avatar>  
-          </button>
-        </li>
-      </ul>
-    </div>
-   
+      <ion-list>
+        <ul *ngFor="let item of datosAvatars" >
+          <li> 
+            <button (click)="captura(item)">
+              <ion-avatar clas="avtlogo">
+                <img  alt="{{item.name}}" src={{item.url}} />
+              </ion-avatar>  
+            </button>
+          </li>
+        </ul>
+      </ion-list>
+    </div> 
   </div>
 
   <div class="form-container">
